@@ -1,15 +1,23 @@
 
-users = {
-    'Марго': '11-15',
-    'Софія': '5-10',
-    'Інна': '35-44',
-    'Арсеній': '18-24',
-    'Артем': '55-64'
+users_age_group = {
+    "Олександра": "17-20",
+    "Маріна": "10-15",
+    "Микита": "25-30",
+    "Дарія": "30-40",
+    "Анна": "50-60"
 }
 
-name = input("Введіть ім'я користувача: ")
 
-if name in users:
-    print(f"{name} належить до вікової групи: {users[name]}")
-else:
-    print(f"Ім'я {name} не знайдено у словнику.")
+def get_age_group():
+    try:
+        username = input("Введіть ім'я користувача: ")
+
+        age_group = users_age_group[username]
+
+        print(f"{username} належить до вікової групи: {age_group}")
+
+    except KeyError:
+        print("Користувача з таким ім'ям не знайдено.")
+
+get_age_group()
+
